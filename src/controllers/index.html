@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Receive Payment</title>
+  </head>
+  <body>
+    <div class="flex justify-center h-screen items-center">
+      <div>
+        <p class="text-4xl">Transaction Successful</p>
+        <div class="flex justify-center w-full">
+          <button
+            class="w-fit mt-4 bg-blue-800 text-sm py-2 tracking-[1px] px-8 leading-loose rounded-lg"
+          >
+            <a href="http://localhost:3000/dashboard">dashboard</a>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- 
+    <script>
+      function makePayment() {
+        FlutterwaveCheckout({
+          public_key: "FLWPUBK_TEST-b2b1c951addae38b9d337399cf2074ba-X",
+          tx_ref: Date.now(),
+          amount: 1000,
+          currency: "NGN",
+          country: "NG",
+          payment_options: "card",
+
+          // specified redirect URL
+          redirect_url: "http://localhost:4001/api/response",
+
+          // use customer details if user is not logged in, else add user_id to the request
+          customer: {
+            email: "kennooox@gmai.com",
+            phone_number: "08088098622",
+            name: "Idris Olubisi",
+          },
+          callback: function (data) {
+            console.log(data);
+          },
+          onclose: function () {
+            // close modal
+          },
+          customizations: {
+            title: "Flutterwave Demo",
+            description: "Flutterwave Payment Demo",
+            logo: "https://cdn.iconscout.com/icon/premium/png-256-thumb/payment-2193968-1855546.png",
+          },
+        });
+      }
+    </script> -->
+  </body>
+</html>
