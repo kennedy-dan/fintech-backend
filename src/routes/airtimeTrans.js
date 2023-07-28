@@ -5,13 +5,15 @@ const {
   getAirtimeCats,
   getCableCats,
   getPowerCats,
-  getInternetrCats
+  getInternetrCats,
+  getAirtime
 } = require("../controllers/airtimeTransaction");
 const { requireSignin } = require("../middleware/index");
 const router = express.Router();
 // const { validatesignupRequest, isRequestValidated, validatesigninRequest } = require("../validators/auth");
 
-router.post("/airtime", createAirtime);
+router.post("/airtime", requireSignin, createAirtime);
+router.get("/airtime", requireSignin, getAirtime);
 router.get("/getdata", getDataCats);
 router.get("/getcable", getCableCats);
 router.get("/getpower", getPowerCats);

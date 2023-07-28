@@ -1,5 +1,5 @@
 const express = require("express");
-const { getWallet  } = require("../controllers/wallet");
+const { getWallet, updateWallet  } = require("../controllers/wallet");
 const router = express.Router();
 const { requireSignin } = require("../middleware/index");
 
@@ -7,6 +7,7 @@ const { requireSignin } = require("../middleware/index");
 
 
 router.get("/wallet/balance" ,requireSignin, getWallet) ;
+router.get("/update/balance/:transId" ,requireSignin, updateWallet) ;
 
 
 

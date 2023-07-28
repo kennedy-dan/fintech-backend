@@ -20,19 +20,22 @@ exports.createAirtime = async (req, res) => {
       customer: req.body.customer,
       amount: req.body.amount,
       type: req.body.type,
-      reference: req.body.reference,
+      reference: Math.random() * 1000000000,
     },
+    
   };
+  console.log(req.user)
 
   axios(config)
     .then(function (response) {
       console.log(JSON.stringify(response.data));
-      // console.log(req)
+      
       const airtimeData = {
-        user: req.user.user_id,
+        user: req.user._id,
         network: response.data.data.network,
         phone: response.data.data.phone_number,
         amount: response.data.data.amount,
+        transactionId: response.data.data.flw_ref
       };
       const airtime = new Airtime(airtimeData);
       airtime.save((err, airtimesuccess) => {
@@ -197,3 +200,12 @@ exports.getDataCategories = (req, res) => {
     }
   });
 };
+
+exports.getAirtime = async (req,res) => {
+  const bills = await Airtime.find({user:req.user._id});
+
+  res.status(200).json({
+    success: true,
+    bills,
+  });
+}

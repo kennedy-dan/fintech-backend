@@ -6,7 +6,6 @@ const AirtimeSchema = Schema(
     user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-
       ref: "user",
     },
     network: {
@@ -23,10 +22,9 @@ const AirtimeSchema = Schema(
       type: Number,
       required: [true, "amount is required"],
     },
-    paymentStatus: {
+    transactionId: {
       type: String,
-      enum: ["successful", "pending", "failed"],
-      default: "pending",
+      required: [true, "amount is required"],
     },
     // paymentGateway: {
     //   type: String,

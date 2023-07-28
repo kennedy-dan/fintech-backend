@@ -94,7 +94,7 @@ exports.transactionResponce = async (req, res) => {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
-      Authorization: `${process.env.FLUTTERWAVE_V3_SECRET_KEY}`,
+      Authorization: `${process.env.FLUTTERWAVE_V3_SECRET_KEY_TWO}`,
     },
   });
 
@@ -110,7 +110,7 @@ exports.transactionResponce = async (req, res) => {
   }
   // check if customer exist in our database
   const user = await User.findOne({ email: customer.email });
-  console.log(user);
+  console.log(amount); 
   console.log(customer.email);
 
   // check if user have a wallet, else create wallet
