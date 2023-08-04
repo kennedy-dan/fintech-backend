@@ -1,4 +1,5 @@
-require("dotenv").config();
+const env = require("dotenv");
+
 require("./src/config/database").connect();
 const express = require("express");
 const cors = require("cors");
@@ -14,6 +15,7 @@ const airtimeTransac = require('./src/routes/airtimeTrans');
 app.use(cors());
 app.use(express.json());
 
+env.config()
 
 app.use('/api', userRoute)
 app.use('/api', walletRoute)
