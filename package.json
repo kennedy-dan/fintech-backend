@@ -15,7 +15,7 @@
     "axios": "^0.24.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
+    "dotenv": "^16.0.1",
     "express": "^4.17.1",
     "js-sha512": "^0.8.0",
     "jsonwebtoken": "^8.5.1",
