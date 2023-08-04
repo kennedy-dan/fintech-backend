@@ -9,7 +9,7 @@ exports.connect = () => {
 
   // mongodb+srv://mom:mommy@cluster0.8gbdb.mongodb.net/fintech?retryWrites=true&w=majority
   mongoose
-    .connect("mongodb://localhost:27017/bill", {
+    .connect("mongodb+srv://mom:mommy@cluster0.8gbdb.mongodb.net/fintech?retryWrites=true&w=majority", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
