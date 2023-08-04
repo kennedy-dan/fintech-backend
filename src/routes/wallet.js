@@ -7,7 +7,7 @@ const { requireSignin } = require("../middleware/index");
 
 
 router.get("/wallet/balance" ,requireSignin, getWallet) ;
-router.get("/update/balance/:transId" ,requireSignin, updateWallet) ;
+router.get("/update/balance/:transId/:user" ,requireSignin, updateWallet) ;
 
 
 

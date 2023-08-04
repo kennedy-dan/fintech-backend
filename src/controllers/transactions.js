@@ -135,3 +135,12 @@ exports.transactionResponce = async (req, res) => {
 
 
 };
+
+  exports.getTranSAction = async (req,res) => {
+    const bills = await Transaction.find({userId:req.user._id});
+  
+    res.status(200).json({
+      success: true,
+      bills,
+    });
+  }
